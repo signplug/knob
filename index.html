@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HTML5 &lt;x-knob&gt; rotating knob web component</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+Required for browsers that do not yet support the latest technologies.
+http://webcomponents.org/
+https://github.com/webcomponents/webcomponentsjs/releases
+-->
+<script type="text/javascript">
+if (!document.registerElement) {
+	document.writeln(decodeURI('%3Cscript%20src=%22https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.12/webcomponents.min.js%22%20type=%22text/javascript%22%3E%3C/script%3E'));
+}
+</script>
+
+<script src="xknob.js" type="text/javascript" async></script>
+<link href="xknob.css" type="text/css" rel="stylesheet">
+
+<style type="text/css">
+html, body {
+	background-color: #020202;
+	margin-right: 160px;
+	 
+}
+h2 {
+	border-top: 1px solid: #B4A5A5;
+	margin: 1em 0 1px;
+}
+:target {
+	background: #061F4B;
+}
+
+</style>
+
+<svg style="display: none;">
+	<defs>
+		
+
+		<!-- Driving wheel clipart from https://openclipart.org/detail/172010/driving-wheel -->
+		<symbol id="driving-wheel-as-image" viewBox="0 0 1 1">
+			<image xlink:href="maj.png" x="0" y="0" width="1" height="1"/>
+		</symbol>
+		
+	</defs>
+</svg>
+
+</head>
+<body>
+
+<h1><code>&lt;signPlug-knob&gt;</code>Tareq Sultan</h1>
+
+<script type="text/javascript">
+if (window.WebComponents) {
+	document.writeln('<p style="color:red;">Note: <code>document.registerElement()</code> not detected, enabling the <a href="https://github.com/webcomponents/webcomponentsjs/releases">webcomponentsjs</a> polyfill.</p>');
+}
+</script>
+
+
+
+
+
+
+
+<section id="bug-tinted-image-background">
+
+
+<p>We have an external <a href="maj.png">geometry of the major chords</a> file (<a href="maj.png"></a>) that is being included below in several ways.</p>
+
+
+
+
+<p class="testcase">
+	<x-knob svgsymbolid="driving-wheel-as-image" title="x-knob element with SVG &lt;image&gt; inside a &lt;symbol&gt; being referenced by &lt;use&gt; inside shadow DOM."></x-knob>
+	
+	
+	
+</p>
+<p>Current rotation is <output class="testcase"></output>deg.
+<style type="text/css">
+#bug-tinted-image-background p.testcase {
+	background-image: url("background.png");
+	background-size: 520px 630px;
+	
+}
+	
+	
+	#bug-tinted-image-background .testcase > x-knob {
+display: inline-block;
+	width: 520px;
+	height: 630px;
+	} 
+
+</style>
+
+</section>
+
+</body>
+</html>
